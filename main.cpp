@@ -197,12 +197,12 @@ void PPMout(Imgs *p1, char *outFile)
 	fout = fopen(outFile, "w"); // open a file with write mode
 
 	// output the PPM format
-	fprintf(fout, "%s\n%d %d\n%d\n", p1->header, p1->w, p1->h, p1->l);
+	fprintf(fout, "%s\n%d %d\n%d\n  ", p1->header, p1->w, p1->h, p1->l);
 	// output the images contents
 	for (i = 0; i < p1->h; i++) {
 		for (j = 0; j < p1->w; j++) {
-			fprintf(fout, "%c%c%c", p1->pic[j][i].b, p1->pic[j][i].g,
-					p1->pic[j][i].r);
+			fprintf(fout, "%c%c%c", p1->pic[j][i].r, p1->pic[j][i].g,
+					p1->pic[j][i].b);
 		}
 	}
 	// close fout
@@ -240,9 +240,9 @@ Imgs *make_Frame(Imgs *p1, int color[3], int thickness)
 
 			if (to_Convert)
 			{
-				p1->pic[x][y].r = 255;	// color[0];
-				p1->pic[x][y].g = 0;	// color[1];
-				p1->pic[x][y].b = 128;	// color[2];
+				p1->pic[x][y].r = color[0];
+				p1->pic[x][y].g = color[1];
+				p1->pic[x][y].b = color[2];
 				p1->pic[x][y].is_Blank = 0;
 				p1->pic[x][y].is_Converted = 1;
 			}

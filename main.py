@@ -9,9 +9,22 @@ if n == 'n':
     s = input()
 img = Image.open(s)
 img.save('test.ppm')
+img = Image.open('test.ppm')
 
 os.system('.\\main')
 
 im = Image.open("out.ppm")
-im.save("out.jpg")
+im = im.convert('RGBA')
+
+# Transparency
+newImage = []
+for item in im.getdata():
+    if item[:3] == (0, 0, 0):
+        newImage.append((255, 255, 255, 0))
+    else:
+        newImage.append(item)
+
+im.putdata(newImage)
+
+im.save('out.png')
 im.show()
