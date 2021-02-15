@@ -2,7 +2,7 @@ import os
 from PIL import Image
 
 s = 'test.png'
-print("Do the image you want to add frame call test.png? (y/n):")
+print("Does the image you want to add frame call test.png? (y/n):")
 n = input()
 if n == 'n':
     print("enter the path of picture you want to add frame:")
