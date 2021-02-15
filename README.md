@@ -1,9 +1,7 @@
 This is a project that can add frame on a photo
 
-You First make the words you want to add frame to a .png or .ppm file
+First you use setup.py to set up
+then you can run main.py to add frame on our png file
 
-Then run main.py on windows
-
-Choice the option commander give you
-
-Then get then jpg
+Build on 2021/2/15 and offer everyone to use for free
+You can use it for any porpose, including commercial use.
